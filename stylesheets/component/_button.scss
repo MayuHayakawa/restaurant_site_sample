@@ -1,0 +1,17 @@
+@use '../abstract/variables' as v;
+@use '../base/fonts' as f;
+
+%button {
+    border: solid 1px v.$primary-color;
+    width: 10rem;
+    height: 3rem;
+    background-color: transparent;
+    cursor: pointer;
+    @include f.font-face('Josefin Sans','','',v.$primary-color);
+    font-size: 1rem;
+    &:hover {
+        color: v.$secondary-color;
+        background-color: v.$primary-color;
+        transition: all 0.4s;
+    }
+}

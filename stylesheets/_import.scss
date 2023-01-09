@@ -1,0 +1,7 @@
+@forward 'base/base';
+
+@forward 'layout/header';
+@use 'layout/section';
+@use 'layout/footer';
+
+@forward 'component/logo';

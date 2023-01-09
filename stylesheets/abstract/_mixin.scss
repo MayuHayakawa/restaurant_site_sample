@@ -1,0 +1,19 @@
+$breakpoint: (
+  sp: 'screen and (max-width: 767px)',
+  tab: 'screen and (min-width: 768px) and (max-width: 1024px)',
+  pc: 'screen and (min-width: 1025px)'
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+   @content;
+  }
+}
+
+@mixin img($url, $alpha) {
+  background-image: url($url);
+  background-size: cover;
+  background-color:rgba(0,0,0,$alpha);
+  background-blend-mode:darken;
+  background-position: center;
+}

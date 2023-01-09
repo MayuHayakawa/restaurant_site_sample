@@ -1,0 +1,188 @@
+@use '../base/fonts' as f;
+@use '../abstract/mixin' as m;
+@use '../abstract/variables' as v;
+@use '../component/button';
+
+.about-us {
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 5rem;
+    @include m.mq(tab) {
+        height: 100vh;
+    }
+    @include m.mq(sp) {
+        height: 100vh;
+        grid-template-columns: none;
+    }
+    &-left {
+        width: 100%;
+        margin: auto;
+        @include m.mq(sp) {
+            display: none;
+        }
+        > img {
+            width: 100%;
+        }
+    }
+    &-right {
+        width: 100%;
+        margin: auto;
+        padding: 0 3rem;
+        h1 {
+            @include f.font-face('Dancing Script','','',v.$primary-color);
+            font-size: 6rem;
+            margin: auto;
+            margin-bottom: 3rem;
+            @include m.mq(tab) {
+                font-size: 5rem;
+                margin-bottom: 2.5rem;
+            }
+            @include m.mq(sp) {
+                font-size: 4rem;
+                margin-bottom: 2rem;
+            }
+        }
+        h3 {
+            @include f.font-face('Josefin Sans');
+            font-size: 3rem;
+            margin: auto;
+            margin-bottom: 6rem;
+            @include m.mq(tab) {
+                font-size: 2rem;
+                margin-bottom: 5rem;
+            }
+            @include m.mq(sp) {
+                font-size: 1rem;
+                margin-bottom: 4rem;
+            }
+        }
+        .stars {
+            margin: 2rem 0;
+            > .fa-solid {
+                color: v.$primary-color;
+                margin-left: 0.5rem;
+            }
+        }
+        p {
+            @include f.font-face('Josefin Sans','',italic,v.$text-color);
+            font-size: 1rem;
+        }
+        button {
+            @extend %button;
+        }
+    }
+}
+
+.card {
+    width: 100%;
+    &-list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        @include m.mq(sp) {
+            display: flex !important;
+            flex-direction: column;
+        }
+        &-item {
+            overflow: hidden;
+            width: 100%;
+            height: 30vw;
+            position: relative;
+            @include m.mq(sp) {
+                height: 30vh;
+            }
+            &:nth-child(1) {
+                @include m.img('/asset/image/gallery-img-1.jpeg', 0.4);
+            }
+            &:nth-child(2) {
+                @include m.img('/asset/image/gallery-img-2.jpeg', 0.4);
+            }
+            &:nth-child(3) {
+                @include m.img('/asset/image/gallery-img-3.jpeg', 0.4);
+            }
+            &:nth-child(4) {
+                @include m.img('/asset/image/gallery-img-4.jpeg', 0.4);
+            }
+            &:nth-child(5) {
+                @include m.img('/asset/image/gallery-img-5.jpeg', 0.4);
+            }
+            &:nth-child(6) {
+                @include m.img('/asset/image/gallery-img-6.jpeg', 0.4);
+            }
+            // ---error---
+            // @for $i from 1 through 6 {
+            //     .card-list-item:rnth-child($i) {
+            //         @include m.img('/asset/image/gallery-img-${i}.jpeg', 0.4);
+            // }
+            // }
+            &:hover {
+                .card-list-item-overlay {
+                    transform: translateX(100%);
+                }
+            }
+            &-overlay {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #fff !important;
+                position: absolute;
+                top: 0;
+                left: -100%;
+                z-index: 10;
+                transition: 1s;
+                background-color: rgba(211, 171, 84, 0.6);
+                @include f.font-face('Josefin Sans');
+                h1 {
+                    margin: 0;
+                    font-size: 4rem;
+                    @include m.mq(tab) {
+                        font-size: 3rem;
+                    }
+                    @include m.mq(sp) {
+                        font-size: 2rem;
+                    }
+                }
+                p {
+                    margin-top: 0.5rem;
+                    font-size: 2rem;
+                    @include m.mq(tab) {
+                        font-size: 1.5rem;
+                    }
+                    @include m.mq(sp) {
+                        font-size: 1rem;
+                    }
+                }
+                button {
+                    width: 15rem;
+                    height: 3rem;
+                    color: v.$primary-color;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    background-color: #fff;
+                    border: solid 1px v.$primary-color;
+                    border-radius: 30px;
+                    cursor: pointer;
+                    @include m.mq(tab) {
+                        width: 10rem;
+                        height: 2rem;
+                        font-size: 1rem;
+                    }
+                    @include m.mq(sp) {
+                        width: 10rem;
+                        height: 2rem;
+                        font-size: 1rem;
+                    }
+                }
+                
+
+            }
+        }
+
+    }
+}

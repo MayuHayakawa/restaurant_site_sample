@@ -1,0 +1,91 @@
+@use '../base/fonts' as f;
+@use '../abstract/mixin' as m;
+@use '../abstract/variables' as v;
+@use '../component/button';
+
+
+header {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    @include m.img('/asset/image/bg.jpeg', 0.7);
+}
+
+.header-top {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    > div {
+      margin: auto;
+      margin-right: 0;
+      margin-left: 0;
+    }
+    &-ttl {
+        margin: auto;
+        margin-left: 0;
+        text-align: start;
+        font-size: 5rem;
+        @include f.font-face('Nunito');
+        @include m.mq(tab) {
+            font-size: 4rem;
+        }
+        @include m.mq(sp) {
+            font-size: 3rem;
+        }
+    }
+    &-desc {
+        margin: auto;
+        margin-left: 0;
+        text-align: start;
+        font-size: 1.5rem;
+        @include f.font-face('Josefin Sans');
+        @include m.mq(tab) {
+            font-size: 1rem;
+        }
+        @include m.mq(sp) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.header-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    h1 {
+        @include f.font-face('Dancing Script','','',v.$primary-color);
+        font-size: 6rem;
+        margin: auto;
+        margin-bottom: 3rem;
+        @include m.mq(tab) {
+            font-size: 5rem;
+            margin-bottom: 2.5rem;
+        }
+        @include m.mq(sp) {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+    }
+    h3 {
+        @include f.font-face('Josefin Sans');
+        font-size: 3rem;
+        margin: auto;
+        margin-bottom: 6rem;
+        @include m.mq(tab) {
+            font-size: 2rem;
+            margin-bottom: 5rem;
+        }
+        @include m.mq(sp) {
+            font-size: 1rem;
+            margin-bottom: 4rem;
+        }
+    }
+    button {
+        @extend %button;
+    }
+}

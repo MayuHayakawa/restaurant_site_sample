@@ -1,0 +1,77 @@
+@use '../base/fonts' as f;
+@use '../abstract/mixin' as m;
+@use '../abstract/variables' as v;
+
+footer {
+    width: 100%;
+    height: 70vh;
+    margin: auto;    
+}
+
+.footer-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20%;
+    &-ttl {
+        margin: auto;
+        margin-left: 0;
+        text-align: start;
+        font-size: 5rem;
+        @include f.font-face('Nunito');
+        @include m.mq(tab) {
+            font-size: 4rem;
+        }
+        @include m.mq(sp) {
+            font-size: 3rem;
+        }
+    }
+    &-desc {
+        margin: auto;
+        margin-left: 0;
+        text-align: start;
+        font-size: 1.5rem;
+        @include f.font-face('Josefin Sans');
+        @include m.mq(tab) {
+            font-size: 1rem;
+        }
+        @include m.mq(sp) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.footer-social-media {
+    width: 100%;
+    margin-bottom: 5rem;
+    .social-media {
+        width: 100%;
+        display: flex;
+        padding: 0 20%;
+        text-decoration: none;
+        justify-content: center;
+        &-item {
+            margin-left: 3rem;
+            list-style: none;
+            @include m.mq(sp) {
+                margin-left: 1rem;
+            }
+            i {
+                color: v.$text-color;
+                font-size: 3rem;
+                @include m.mq(sp) {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+.footer-copyright {
+    @include f.font-face('Josefin Sans');
+    color: v.$text-color;
+    font-size: 1.3rem;
+    @include m.mq(sp) {
+        font-size: 1rem;
+    }
+}
