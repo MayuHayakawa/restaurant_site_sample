@@ -64,6 +64,10 @@ footer {
             i {
                 color: v.$text-color;
                 font-size: 3rem;
+                cursor: pointer;
+                &:hover {
+                    color: v.$primary-color;
+                }
                 @include m.mq(sp) {
                     font-size: 2rem;
                 }

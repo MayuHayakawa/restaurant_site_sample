@@ -464,6 +464,10 @@ footer {
 .footer-social-media .social-media-item i {
   color: #bbbbbb;
   font-size: 3rem;
+  cursor: pointer;
+}
+.footer-social-media .social-media-item i:hover {
+  color: #d3ab54;
 }
 @media screen and (max-width: 767px) {
   .footer-social-media .social-media-item i {
